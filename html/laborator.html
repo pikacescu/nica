@@ -1,0 +1,34 @@
+<html>
+   <head>
+      <style>
+        .base_list {list-style-type:circle; color: blue; }
+        ul.base_list2{list-style-type:square; color:green; border-style: solid; }
+        .xxx{ border-style: solid;  display: inline-block}
+      </style>
+   </head>
+   <body>
+      <h1>, Meniu</h1>
+      <ul class="base_list">
+         <li><a href="http://google.com">CV</a></li>
+         <li onclick="alert('salut')"><u>Liceul Teoretic "Iulia Hasdeu"</u></li>
+         <li><u>Chisinau</u></li>
+         <li><u>Republica Moldova</u></li>
+         <li><u>Informatica</u>
+            <ul class="base_list2" style="text-decoration: none;">
+               <li style="text-decoration: none;">Sisteme de numerație _1</li>
+               <li>Sisteme de numerație _2</li>
+            </ul>
+         </li>
+         <li><u>Tema preferata</u></li>
+      </ul>
+	  <div id="div_salut">salut</div>
+	  <script> document.getElementById("div_salut").className="xxx"; </script>
+	  <button>click me</button><br/>
+	  <input type="checkbox">check me</input><br/>
+	  <input type="checkbox">check me2</input><br/>
+	  <input type="checkbox">check me3</input><br/>
+	  <input type="radio" name="radiome">radio me</input><br/>
+	  <input type="radio" name="radiome">radio me2</input><br/>
+	  <input type="radio" name="radiome">radio me3</input><br/>
+   </body>     
+</html>
