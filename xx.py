@@ -1,1 +1,1 @@
-print ('salut la toti')
+print ('salut la toti!')
