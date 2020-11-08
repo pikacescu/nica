@@ -1,3 +1,5 @@
 /lol2_files
 bin
 obj
+*.layout
+*.depend
