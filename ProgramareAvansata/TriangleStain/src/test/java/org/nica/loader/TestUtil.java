@@ -5,15 +5,18 @@ import org.junit.jupiter.api.function.Executable;
 
 import java.io.File;
 import java.io.IOException;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Files;
+import java.util.Objects;
 
 import static org.junit.jupiter.api.Assertions.*;
 import static org.nica.Util.getResourcePath;
 import static org.nica.Util.revertDefaultLoadConfigs;
 
-public class Tech
+
+//@SuppressWarnings({"SameParameterValue", "unused"})
+@SuppressWarnings({"unused"})
+public class TestUtil
 {
     public static void assertNoThrow(Executable executable) {
         assertNoThrow(executable, "must not throw");
@@ -37,38 +40,15 @@ public class Tech
     {
         assertDoesNotThrow(() -> {});
     }
-    /*
-    public static void loadFromDb(SessionFactory sessionFactory)  {
-
-        sessionFactory.inTransaction(session -> {
-            session.createSelectionQuery("from Event", Event.class)
-                    .getResultList()
-                    .forEach(event -> System.out.println("Event (" + event.getDate() + ") : " + event.getTitle()));
-        });
-    }
-    public static void loadFromDbVerbal(SessionFactory sessionFactory)  throws Exception {
-        Session session = sessionFactory.getCurrentSession();
-        session.beginTransaction();
-        session.createSelectionQuery("from Event", Event.class)
-                .getResultList()
-                .forEach(event -> System.out.println("Event (" + event.getDate() + ") : " + event.getTitle()));
-        session.getTransaction().commit();
-        session.close();
-    }
-    public static Path getResourcePath(String resName){
-        URL fl = Config.class.getClassLoader().getResource(".");
-        return Path.of(new File(fl.getFile()).getPath(), resName);
-    } //*/
     @org.junit.jupiter.api.Test
-    void tech() throws MalformedURLException {
+    void tech() {
         System.out.println (new File("").getAbsolutePath());
         System.out.println (getResourcePath(getTestLoadXmlCfg()));
 
-            URL fl = Config.class.getClassLoader().getResource(getTestLoadXmlCfg());
-            if (fl == null) fl = new URL ("");
-            //fl.getFile()
-            System.out.println(new File(fl.getFile()).getPath());
-            System.out.println(fl.getPath());
+        URL fl = Config.class.getClassLoader().getResource(getTestLoadXmlCfg());
+        if (fl == null) fl = Config.class.getClassLoader().getResource(".");
+        System.out.println(new File(Objects.requireNonNull(fl).getFile()).getPath());
+        System.out.println(fl.getPath());
 
     }
     public static String getTestLoadXmlCfg(){return "hibernate.test.load.cfg.xml";}

@@ -9,7 +9,7 @@ import org.nica.model.Event;
 import java.io.IOException;
 
 import static org.nica.Util.loadFromDbVerbal;
-import static org.nica.loader.Tech.*;
+import static org.nica.loader.TestUtil.*;
 
 class StandardTest {
     @BeforeAll
@@ -24,7 +24,7 @@ class StandardTest {
     }
 
     @Test
-    void withProps() throws Exception {
+    void withProps() {
         SessionFactory sessionFactory = new org.nica.loader.Standard()
                 //.withProps() //does nothing
                 .addAnnotatedClass(Event.class)
@@ -33,7 +33,7 @@ class StandardTest {
     }
 
     @Test
-    void withPropsCustom() throws Exception {
+    void withPropsCustom() {
         SessionFactory sessionFactory = new org.nica.loader.Standard()
                 .withProps(getTestLoadProps())
                 .addAnnotatedClass(Event.class)
@@ -41,7 +41,7 @@ class StandardTest {
         loadFromDbVerbal(sessionFactory);
     }
     @Test
-    void withXml() throws Exception {
+    void withXml() {
         SessionFactory sessionFactory = new org.nica.loader.Standard()
                 .withXml()
                 .addAnnotatedClass(Event.class)
@@ -49,7 +49,7 @@ class StandardTest {
         loadFromDbVerbal(sessionFactory);
     }
     @Test
-    void withXmlCustom() throws Exception {
+    void withXmlCustom() {
         SessionFactory sessionFactory = new org.nica.loader.Standard()
                 .withXml(getTestLoadXmlCfg())
                 .addAnnotatedClass(Event.class)

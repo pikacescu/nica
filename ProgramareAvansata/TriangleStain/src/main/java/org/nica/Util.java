@@ -10,15 +10,14 @@ import java.io.IOException;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Path;
+import java.util.Objects;
 
 public class Util {
     public static void loadFromDb(SessionFactory sessionFactory)  {
         /* */
-        sessionFactory.inTransaction(session -> {
-            session.createSelectionQuery("from Event", Event.class)
-                    .getResultList()
-                    .forEach(event -> System.out.println("Event (" + event.getDate() + ") : " + event.getTitle()));
-        });
+        sessionFactory.inTransaction(session -> session.createSelectionQuery("from Event", Event.class)
+                .getResultList()
+                .forEach(event -> System.out.println("Event (" + event.getDate() + ") : " + event.getTitle())));
     }
     public static void loadFromDbVerbal(SessionFactory sessionFactory) {
         /* */
@@ -32,7 +31,7 @@ public class Util {
     }
     public static Path getResourcePath(String resName){
         URL fl = Config.class.getClassLoader().getResource(".");
-        return Path.of(new File(fl.getFile()).getPath(), resName);
+        return Path.of(new File(Objects.requireNonNull(fl).getFile()).getPath(), resName);
     }
 
     public static String getLoadXmlCfg(){return "hibernate.load.cfg.xml";}

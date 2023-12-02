@@ -8,7 +8,7 @@ import org.nica.model.Event;
 
 import java.io.IOException;
 
-import static org.nica.loader.Tech.*;
+import static org.nica.loader.TestUtil.*;
 import static org.nica.Util.*;
 
 @SuppressWarnings({"SameParameterValue", "unused"})
