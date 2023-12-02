@@ -13,7 +13,7 @@ import java.util.Properties;
 public class Config {
     private Configuration cfg = new Configuration();
     public Config(){}
-    Config withXml()
+    public Config withXml()
     {
         cfg.configure(); //"hibernate.cfg.xml"
         return this;
@@ -22,7 +22,7 @@ public class Config {
     {
         return this; //"hibernate.properties"
     }
-    Config withXml(String xml) //"hibernate.cfg.xml"
+    public Config withXml(String xml) //"hibernate.cfg.xml"
     {
         cfg.configure(xml);
         return this;

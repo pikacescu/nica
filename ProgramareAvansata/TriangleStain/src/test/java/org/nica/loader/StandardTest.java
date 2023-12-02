@@ -2,19 +2,26 @@ package org.nica.loader;
 
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.junit.jupiter.api.AfterAll;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.nica.model.Event;
 
+import java.io.IOException;
+
+import static org.nica.loader.Tech.*;
+import static org.nica.Util.*;
+
 class StandardTest {
-    protected void loadFromDb(SessionFactory sessionFactory)  throws Exception {
-        /* */
-        Session session = sessionFactory.getCurrentSession();
-        session.beginTransaction();
-        session.createSelectionQuery("from Event", Event.class)
-                .getResultList()
-                .forEach(event -> System.out.println("Event (" + event.getDate() + ") : " + event.getTitle()));
-        session.getTransaction().commit();
-        session.close();
+    @BeforeAll
+    static void buildDefaultProps() throws Exception {
+        buildTestDefaultLoadConfigs();
+        System.out.println ("salut config test");
+    }
+    @AfterAll
+    static void revertDefaultProps() throws IOException {
+        revertTestDefaultLoadConfigs();
+        System.out.println ("pa config test");
     }
 
     @Test
@@ -23,16 +30,16 @@ class StandardTest {
                 //.withProps() //does nothing
                 .addAnnotatedClass(Event.class)
                 .build();
-        loadFromDb (sessionFactory);
+        loadFromDbVerbal(sessionFactory);
     }
 
     @Test
     void withPropsCustom() throws Exception {
         SessionFactory sessionFactory = new org.nica.loader.Standard()
-                .withProps("hibernate.properties")
+                .withProps(getTestLoadProps())
                 .addAnnotatedClass(Event.class)
                 .build();
-        loadFromDb (sessionFactory);
+        loadFromDbVerbal(sessionFactory);
     }
     @Test
     void withXml() throws Exception {
@@ -40,14 +47,14 @@ class StandardTest {
                 .withXml()
                 .addAnnotatedClass(Event.class)
                 .build();
-        loadFromDb (sessionFactory);
+        loadFromDbVerbal(sessionFactory);
     }
     @Test
     void withXmlCustom() throws Exception {
         SessionFactory sessionFactory = new org.nica.loader.Standard()
-                .withXml("hibernate.cfg.xml")
+                .withXml(getTestLoadXmlCfg())
                 .addAnnotatedClass(Event.class)
                 .build();
-        loadFromDb (sessionFactory);
+        loadFromDbVerbal(sessionFactory);
     }
 }
