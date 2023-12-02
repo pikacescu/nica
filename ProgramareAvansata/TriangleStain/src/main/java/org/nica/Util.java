@@ -20,7 +20,7 @@ public class Util {
                     .forEach(event -> System.out.println("Event (" + event.getDate() + ") : " + event.getTitle()));
         });
     }
-    public static void loadFromDbVerbal(SessionFactory sessionFactory)  throws Exception {
+    public static void loadFromDbVerbal(SessionFactory sessionFactory) {
         /* */
         Session session = sessionFactory.getCurrentSession();
         session.beginTransaction();

@@ -6,7 +6,6 @@ import org.hibernate.cfg.Configuration;
 import java.io.File;
 import java.io.FileInputStream;
 import java.net.URL;
-import java.nio.file.Paths;
 import java.util.Properties;
 
 @SuppressWarnings({"SameParameterValue", "unused"})

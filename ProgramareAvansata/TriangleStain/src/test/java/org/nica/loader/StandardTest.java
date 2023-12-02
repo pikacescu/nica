@@ -1,6 +1,5 @@
 package org.nica.loader;
 
-import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
@@ -9,8 +8,8 @@ import org.nica.model.Event;
 
 import java.io.IOException;
 
+import static org.nica.Util.loadFromDbVerbal;
 import static org.nica.loader.Tech.*;
-import static org.nica.Util.*;
 
 class StandardTest {
     @BeforeAll

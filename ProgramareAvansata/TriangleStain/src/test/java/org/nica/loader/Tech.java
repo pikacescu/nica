@@ -1,20 +1,17 @@
 package org.nica.loader;
 
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.function.Executable;
-import org.nica.model.Event;
 
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.file.Files;
-import java.nio.file.Path;
-import static org.nica.Util.*;
 
 import static org.junit.jupiter.api.Assertions.*;
+import static org.nica.Util.getResourcePath;
+import static org.nica.Util.revertDefaultLoadConfigs;
 
 public class Tech
 {

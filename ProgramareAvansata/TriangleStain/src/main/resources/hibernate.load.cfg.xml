@@ -15,7 +15,7 @@ hibernate.hbm2ddl.auto=create
     <session-factory>
 
         <property name = "hibernate.dialect">
-            org.hibernate.dialect.MySQL8Dialect
+            org.hibernate.dialect.MySQLDialect
         </property>
 
         <property name = "hibernate.connection.driver_class">
