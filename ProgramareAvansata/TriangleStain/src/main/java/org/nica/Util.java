@@ -12,7 +12,18 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.util.Objects;
 
+import static java.time.LocalDateTime.now;
+
+@SuppressWarnings("unused")
 public class Util {
+    static void saveNew(SessionFactory sessionFactory) {
+        sessionFactory.inTransaction(session -> {
+            session.persist(new Event("Our very first event!", now()));
+            session.persist(new Event("A follow up event", now()));
+        });
+        loadFromDb(sessionFactory);
+    }
+
     public static void loadFromDb(SessionFactory sessionFactory)  {
         /* */
         sessionFactory.inTransaction(session -> session.createSelectionQuery("from Event", Event.class)
@@ -35,17 +46,25 @@ public class Util {
     }
 
     public static String getLoadXmlCfg(){return "hibernate.load.cfg.xml";}
-    public static String getDefaultXmlCfg(){return "hibernate.cfg.xml";}
     public static String getLoadProps(){return "hibernate.load.properties";}
-    public static String getDefaultLoadProps(){return "hibernate.properties";}
+    public static String getCreateXmlCfg(){return "hibernate.create.cfg.xml";}
+    public static String getCreateProps(){return "hibernate.create.properties";}
+    public static String getDefaultXmlCfg(){return "hibernate.cfg.xml";}
+    public static String getDefaultProps(){return "hibernate.properties";}
 
     public static void buildDefaultLoadConfigs() throws IOException {
-        revertDefaultLoadConfigs();
+        revertDefaultConfigs();
         Files.copy(getResourcePath(getLoadXmlCfg()), getResourcePath(getDefaultXmlCfg()));
-        Files.copy(getResourcePath(getLoadProps()), getResourcePath(getDefaultLoadProps()));
+        Files.copy(getResourcePath(getLoadProps()), getResourcePath(getDefaultProps()));
     }
-    public static void revertDefaultLoadConfigs() throws IOException {
+    public static void revertDefaultConfigs() throws IOException {
         Files.deleteIfExists(getResourcePath(getDefaultXmlCfg()));
-        Files.deleteIfExists(getResourcePath(getDefaultLoadProps()));
+        Files.deleteIfExists(getResourcePath(getDefaultProps()));
     }
+    public static void buildDefaultCreateConfigs() throws IOException {
+        revertDefaultConfigs();
+        Files.copy(getResourcePath(getCreateXmlCfg()), getResourcePath(getDefaultXmlCfg()));
+        Files.copy(getResourcePath(getCreateProps()), getResourcePath(getDefaultProps()));
+    }
+
 }

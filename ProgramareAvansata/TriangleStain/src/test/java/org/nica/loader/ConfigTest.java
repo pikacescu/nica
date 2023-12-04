@@ -8,7 +8,7 @@ import org.nica.model.Event;
 
 import java.io.IOException;
 
-import static org.nica.loader.TestUtil.*;
+import static org.nica.loader.TestConfigUtil.*;
 import static org.nica.Util.*;
 
 @SuppressWarnings({"SameParameterValue", "unused"})
@@ -20,7 +20,7 @@ class ConfigTest {
     }
     @AfterAll
     static void revertDefaultProps() throws IOException {
-        revertTestDefaultLoadConfigs();
+        revertTestDefaultConfigs();
         System.out.println ("pa config test");
     }
 

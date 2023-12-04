@@ -9,7 +9,7 @@ import org.nica.model.Event;
 import java.io.IOException;
 
 import static org.nica.Util.loadFromDbVerbal;
-import static org.nica.loader.TestUtil.*;
+import static org.nica.loader.TestConfigUtil.*;
 
 class StandardTest {
     @BeforeAll
@@ -19,7 +19,7 @@ class StandardTest {
     }
     @AfterAll
     static void revertDefaultProps() throws IOException {
-        revertTestDefaultLoadConfigs();
+        revertTestDefaultConfigs();
         System.out.println ("pa config test");
     }
 
