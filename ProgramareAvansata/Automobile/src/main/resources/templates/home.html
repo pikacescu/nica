@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html  xmlns:th="http://www.thymeleaf.org">
+<head>
+   <title>Home Page</title>
+</head>
+<body>
+   <h1>Hello !/Salut !</h1>
+   <p>Application <span th:text="${appName}">Our App</span> welcomes you to <span th:text="${appValue}">Our App Value</span></p>
+   <p>Application <span data-th-text="${appName}">Our App</span> welcomes you to <span data-th-text="${appValue}">Our App Value</span></p>
+
+   <table>
+      <tr>
+         <th>Salutari</th>
+      </tr>
+      <tr data-th-each="salut : ${salutari}">
+         <td th:text="${salut}">Onions</td>
+      </tr>
+   </table>
+</body>
+</html>
