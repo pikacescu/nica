@@ -1,0 +1,27 @@
+Microsoft Visual Studio Solution File, Format Version 8.00
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JNI2test", "JNI2test.vcproj", "{68EBC474-0C54-4B70-846F-2A1F7A879DD6}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "videochatinstall", "videochatinstall\videochatinstall.vdproj", "{FDE0932A-DD34-42CA-9B88-20C65937F250}"
+	ProjectSection(ProjectDependencies) = postProject
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfiguration) = preSolution
+		Debug = Debug
+		Release = Release
+	EndGlobalSection
+	GlobalSection(ProjectConfiguration) = postSolution
+		{68EBC474-0C54-4B70-846F-2A1F7A879DD6}.Debug.ActiveCfg = Debug|Win32
+		{68EBC474-0C54-4B70-846F-2A1F7A879DD6}.Debug.Build.0 = Debug|Win32
+		{68EBC474-0C54-4B70-846F-2A1F7A879DD6}.Release.ActiveCfg = Release|Win32
+		{68EBC474-0C54-4B70-846F-2A1F7A879DD6}.Release.Build.0 = Release|Win32
+		{FDE0932A-DD34-42CA-9B88-20C65937F250}.Debug.ActiveCfg = Debug
+		{FDE0932A-DD34-42CA-9B88-20C65937F250}.Release.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+	EndGlobalSection
+	GlobalSection(ExtensibilityAddIns) = postSolution
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,20 @@
+var shell = new ActiveXObject("WScript.Shell");
+
+var jre_key     = "HKLM\\SOFTWARE\\JavaSoft\\Java Runtime Environment\\";
+var jre_ver     = shell.RegRead (jre_key + "CurrentVersion");
+var jre_home    = shell.RegRead (jre_key + jre_ver + "\\JavaHome")
+var jre_exe_cmd = jre_home + "\\bin\\java.exe";
+
+var jdk_key     = "HKLM\\SOFTWARE\\JavaSoft\\Java Development Kit\\";
+var jdk_ver     = shell.RegRead(jdk_key + "CurrentVersion");
+var jdk_home    = shell.RegRead(jdk_key + jdk_ver + "\\JavaHome");
+
+try
+{
+  shell.RegRead("HKCR\\.cjar\\");
+}catch(e)
+{
+  shell.RegWrite("HKCR\\.cjar\\", "cjarfile");
+  shell.RegWrite("HKCR\\cjarfile\\", "Executable Console Jar File");
+  shell.RegWrite("HKCR\\cjarfile\\shell\\open\\command\\", "\"" + jre_exe_cmd + "\"  -jar \"%1\" %*");
+}
