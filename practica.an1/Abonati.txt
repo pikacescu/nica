@@ -1,0 +1,11 @@
+10
+1	Ion	Vasilache	12341212	Or Chisinau str Vasile Lupu 8/3-5	m
+2	George	Cartofaru	12341212	Republica Moldova, Raionul Cahul, s. Manta	m
+3	Mirela	Lee	23451003	Republica Moldova, s. Cricova str. Independentei 3	f
+4	Maria	Kimoto	23451214	Germania, or. Hamburg str. Stellingen Arena 3-6	f
+5	Akiro	Berbecaru	23451214	R. Moldova or. Chisinau, str. Independentei 34/2-11	m
+6	Mioara	Curosava	21121221	Spania, or. Torremolinos, str. Stefan Cel Mare 3-3	f
+7	Ana Maricica	Norris	12341104	Spania, or. Torremolinos, str. Stefan Cel Mare 3-3	f
+8	Aram	Man	12341022	Spania, or. Torremolinos, str. Stefan Cel Mare 3-3	f
+9	Corben	Dallas	12331123	Planeta fericirii 3/4-10	m
+10	Diatom	Meuer	12331211	salut la toti	m

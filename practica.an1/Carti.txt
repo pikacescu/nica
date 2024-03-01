@@ -1,0 +1,11 @@
+10
+5	1974	Spiridon	Vangheli	Cusma lui Guguta	124
+1	2003	Octavian	Goga	Traiasca natia	234.345
+6	1934	Nicolae	Iorga	Djordano	125
+3	1650	Nicolae	Ceausescu	Cum sa aduci o tara la saracie	456.123
+7	1934	Isaac	Isimov	Dunele si pisicii	123
+4	1800	Ion	Creanga	Amintiri	234
+9	1800	Ion	Calinescu	Creatii	123
+8	1934	Grigore	Vieru	Poezii	123
+2	2003	Gica	Popescu	carte	123
+10	2003	Gica	Popescu	carte	123
