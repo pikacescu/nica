@@ -25,12 +25,15 @@ public class StainMain {
                 return;
 
             case "load": //not default
-                sessionFactory = new org.nica.loader.Standard()
+                sessionFactory = new Standard()
                         .withProps(getLoadProps())
                         .addAnnotatedClass(Event.class)
                         .build();
                 loadFromDb(sessionFactory);
                 return;
+            default:
+                    //throw new IllegalStateException("Unexpected value: " + args[0]);
+                    return;
             }
         System.out.println("Nothing to be done");
     }
