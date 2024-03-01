@@ -13,6 +13,7 @@ public class StainMain {
         SessionFactory sessionFactory;
 
         if (args.length > 0)
+        {
             switch(args[0])
             {
             case "create": //not default
@@ -35,6 +36,7 @@ public class StainMain {
                     //throw new IllegalStateException("Unexpected value: " + args[0]);
                     return;
             }
+        }
         System.out.println("Nothing to be done");
     }
 
