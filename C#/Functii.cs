@@ -16,7 +16,7 @@ class Functii
 	static int  sumaNumerelor(int x, int y, int z)
 	{
 	    Console.WriteLine("x este 0?");
-		if (x == 0 && y != 0 && z != 0) return y + z;			
+		if (x == 0 && y != 0 && z != 0) return y + z;		
 	    Console.WriteLine("y este 0?");
 		if (x != 0 && y == 0 && z != 0) return x + z;			
 	    Console.WriteLine("z este 0?");
